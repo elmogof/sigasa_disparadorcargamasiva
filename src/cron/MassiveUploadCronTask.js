@@ -71,7 +71,7 @@ export const MassiveUploadCronTask =
       try {
         startWorker();
         // Dar tiempo al servidor para iniciar antes de hacer la solicitud
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 5000));
         await ExecMassiveUpload();
       } catch (error) {
         console.error('Error during massive upload execution:', error);

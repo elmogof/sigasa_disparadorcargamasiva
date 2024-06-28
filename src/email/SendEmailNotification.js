@@ -6,9 +6,9 @@ dotenv.config();
 const SendEmailNotification = async (subject, message) => {
     try {
         const transporter = nodemailer.createTransport({
-            host: "smtp-mail.outlook.com", // hostname
+            host: process.env.EMAIL_HOST, // hostname
             secureConnection: false, // TLS requires secureConnection to be false
-            port: 587, // port for secure SMTP
+            port: parseInt(process.env.EMAIL_PORT), // port for secure SMTP
             tls: {
                 ciphers: 'SSLv3'
             },
